@@ -26,6 +26,22 @@ export default function CurtainReveal() {
     }
   }, [isRevealed]);
 
+  // Lock scrolling when the curtain is mounted, and unlock it once the curtain is gone
+  useEffect(() => {
+    if (isMounted) {
+      document.documentElement.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+    };
+  }, [isMounted]);
+
   const handleReveal = useCallback((e?: React.MouseEvent | React.TouchEvent) => {
     if (e) {
       e.stopPropagation();
@@ -181,20 +197,6 @@ export default function CurtainReveal() {
             ...tapStyles
           }}
         />
-        <span
-          style={{
-            fontFamily: 'var(--font-script)',
-            fontSize: '22px',
-            color: 'var(--gold-light)',
-            textShadow: '0 2px 5px rgba(0,0,0,0.7)',
-            letterSpacing: '0.05em',
-            animation: 'textFadeInOut 1.5s ease-in-out infinite alternate',
-            whiteSpace: 'nowrap',
-            ...tapStyles
-          }}
-        >
-          Tap to Reveal
-        </span>
       </button>
     </div>
   );

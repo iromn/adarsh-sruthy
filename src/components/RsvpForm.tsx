@@ -9,9 +9,11 @@ export default function RsvpForm() {
   const [notes, setNotes] = useState('');
   const [waxActive, setWaxActive] = useState(false);
   const [waxText, setWaxText] = useState('S & A');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     const response = {
       name: name.trim(),
@@ -21,18 +23,42 @@ export default function RsvpForm() {
       dateSubmitted: new Date().toISOString()
     };
 
-    // Save to localStorage
-    const rsvpList = JSON.parse(localStorage.getItem('wedding_rsvp') || '[]');
-    rsvpList.push(response);
-    localStorage.setItem('wedding_rsvp', JSON.stringify(rsvpList));
-
     // Show wax seal animation
     setWaxActive(true);
     playThudSound();
 
-    setTimeout(() => {
-      setWaxText('Approved');
-    }, 1500);
+    try {
+      const res = await fetch('/api/rsvp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(response),
+      });
+
+      const data = await res.json();
+      
+      if (res.ok && (data.success || data.warning)) {
+        // Save to localStorage as backup
+        const rsvpList = JSON.parse(localStorage.getItem('wedding_rsvp') || '[]');
+        rsvpList.push(response);
+        localStorage.setItem('wedding_rsvp', JSON.stringify(rsvpList));
+
+        setTimeout(() => {
+          setWaxText('Approved');
+          setIsSubmitting(false);
+        }, 1500);
+      } else {
+        throw new Error(data.error || 'Failed to submit RSVP');
+      }
+    } catch (err: any) {
+      console.error('RSVP submission error:', err);
+      setTimeout(() => {
+        setWaxActive(false);
+        setIsSubmitting(false);
+        alert(`RSVP submission failed: ${err.message || 'Error occurred'}. Please try again.`);
+      }, 1500);
+    }
   };
 
   const resetWax = () => {
@@ -167,8 +193,8 @@ export default function RsvpForm() {
           />
         </div>
 
-        <button type="submit" className="rsvp-submit-btn" id="rsvp-submit-btn">
-          <span>Send Response</span>
+        <button type="submit" className="rsvp-submit-btn" id="rsvp-submit-btn" disabled={isSubmitting}>
+          <span>{isSubmitting ? 'Sending...' : 'Send Response'}</span>
           <svg style={{ width: '14px', height: '14px', fill: 'currentColor' }} viewBox="0 0 24 24">
             <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
           </svg>

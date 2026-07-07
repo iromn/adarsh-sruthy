@@ -121,7 +121,8 @@ export default function Home() {
             <span />
           </div>
 
-          <p className="hero-date">August 30, 2026</p>
+          <p className="hero-date">August 23, 2026</p>
+          <p className="hero-time">12:05 PM – 12:45 PM</p>
           <p className="hero-location">Mavelikkara • Kerala</p>
 
           <a href="#countdown" className="hero-cta">View Details</a>
@@ -202,59 +203,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ==========================================================================
-           OUR STORY TIMELINE
-           ========================================================================== */}
-      <section className="story-section section-padding" id="story">
-        <div className="container">
-          <div className="editorial-header text-center">
-            <span className="section-tag reveal">Our Journey</span>
-            <h2 className="section-title reveal delay-200">How It All Began</h2>
-            <div className="decor-line reveal delay-300" />
-            <p className="editorial-para reveal delay-400">A story crafted in heaven, nurtured on earth.</p>
-          </div>
 
-          <div className="timeline">
-            {/* Timeline Item 1 */}
-            <div className="timeline-item reveal">
-              <div className="timeline-dot" />
-              <div className="timeline-content">
-                <img src="/assets/photos/photo1.jpg" alt="First Meeting" className="timeline-photo" />
-                <div className="timeline-date">October 12, 2024</div>
-                <h3 className="timeline-title">The First Glimpse</h3>
-                <p className="timeline-desc">
-                  Introduced through families, we first met in a quiet cafe under a warm afternoon sun. What was supposed to be a brief conversation stretched into hours of sharing stories, laughter, and an unspoken realization of shared wavelengths.
-                </p>
-              </div>
-            </div>
-
-            {/* Timeline Item 2 */}
-            <div className="timeline-item reveal delay-200">
-              <div className="timeline-dot" />
-              <div className="timeline-content">
-                <div className="timeline-date">February 14, 2025</div>
-                <h3 className="timeline-title">Growing Together</h3>
-                <p className="timeline-desc">
-                  Over phone calls that spanned midnight hours and weekend drives amidst the misty hills, we realized how effortlessly we completed each other. We fell in love with each other’s simple habits, silences, and dreams.
-                </p>
-              </div>
-            </div>
-
-            {/* Timeline Item 3 */}
-            <div className="timeline-item reveal">
-              <div className="timeline-dot" />
-              <div className="timeline-content">
-                <img src="/assets/photos/photo5.jpg" alt="The Proposal" className="timeline-photo" />
-                <div className="timeline-date">October 30, 2025</div>
-                <h3 className="timeline-title">The Sacred Promise</h3>
-                <p className="timeline-desc">
-                  Under a canopy of palm trees alongside the serene Kerala backwaters, Adarsh asked Sruthy to be his lifetime companion. With tears of joy and a soft nod, we sealed a promise to walk hand-in-hand forever.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ==========================================================================
            EVENTS TIMELINE
@@ -279,11 +228,11 @@ export default function Home() {
               <div className="event-details">
                 <div className="event-detail-item">
                   <span className="event-detail-label">Date</span>
-                  <span className="event-detail-value">Sunday, August 30, 2026</span>
+                  <span className="event-detail-value">Sunday, August 23, 2026</span>
                 </div>
                 <div className="event-detail-item">
                   <span className="event-detail-label">Time</span>
-                  <span className="event-detail-value">Ceremony: 9:30 AM – 12:30 PM</span>
+                  <span className="event-detail-value">Ceremony: 12:05 PM – 12:45 PM</span>
                 </div>
                 <div className="event-detail-item">
                   <span className="event-detail-label">Venue</span>
@@ -345,27 +294,7 @@ export default function Home() {
                 A premium heritage venue combining classic luxury with traditional Kerala hospitality.
               </p>
 
-              <div className="venue-guide">
-                <div className="venue-guide-item">
-                  <svg className="venue-guide-icon" viewBox="0 0 24 24">
-                    <path d="M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h12v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-4-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm8.5-1.5c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5.67-1.5 1.5-1.5 1.5.67 1.5 1.5zm2-6.5H6V6h12v3z" />
-                  </svg>
-                  <div className="venue-guide-text">
-                    <h4>By Train</h4>
-                    <p>Mavelikkara Railway Station is just 1.5 km away from the hotel.</p>
-                  </div>
-                </div>
 
-                <div className="venue-guide-item">
-                  <svg className="venue-guide-icon" viewBox="0 0 24 24">
-                    <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L14 19v-5.5l7 2.5z" />
-                  </svg>
-                  <div className="venue-guide-text">
-                    <h4>By Flight</h4>
-                    <p>Trivandrum International Airport (TRV) is approx. 120 km away. Cochin Airport (COK) is approx. 130 km away.</p>
-                  </div>
-                </div>
-              </div>
 
               <a href="https://maps.app.goo.gl/nK6QkqaKXDN2Ppz4A" target="_blank" rel="noopener noreferrer" className="event-btn text-center">
                 Open in Google Maps
@@ -384,50 +313,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ==========================================================================
-           DRESS CODE SECTION
-           ========================================================================== */}
-      <section className="dresscode-section section-padding" id="dresscode">
-        <div className="container">
-          <div className="editorial-header text-center">
-            <span className="section-tag reveal">Etiquette</span>
-            <h2 className="section-title reveal delay-200">Dress Code</h2>
-            <div className="decor-line reveal delay-300" />
-          </div>
 
-          <div className="dresscode-box reveal">
-            <p className="text-center" style={{ fontFamily: 'var(--font-serif)', fontSize: '18px', fontStyle: 'italic', opacity: 0.9 }}>
-              We would be honored to see our family and friends in traditional attire matching the purity and warmth of our wedding.
-            </p>
-
-            <div className="dresscode-grid">
-              <div className="dresscode-column reveal delay-100">
-                <h3 className="dresscode-title">Ladies</h3>
-                <span className="dresscode-attire">Kerala Kasavu Saree or Ethnic Wear</span>
-                <div className="dresscode-swatch-container">
-                  <div className="dresscode-swatch swatch-cream" title="Off-White/Cream" />
-                  <div className="dresscode-swatch swatch-gold" title="Gold Border" />
-                </div>
-                <p className="dresscode-desc">
-                  Elegant traditional Kerala Kasavu sarees, handloom silks, or classic ethnic ensembles in tones of cream, off-white, and antique gold.
-                </p>
-              </div>
-
-              <div className="dresscode-column reveal delay-300">
-                <h3 className="dresscode-title">Gentlemen</h3>
-                <span className="dresscode-attire">Kerala Mundu & Shirt or Kurta</span>
-                <div className="dresscode-swatch-container">
-                  <div className="dresscode-swatch swatch-white" title="White/Cream Shirt" />
-                  <div className="dresscode-swatch swatch-gold" title="Gold Border Mundu" />
-                </div>
-                <p className="dresscode-desc">
-                  Classic Kerala double-mundu with gold borders paired with silk or handloom cream/white shirts, or traditional kurtas.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ==========================================================================
            ACCOMMODATION SECTION
@@ -451,32 +337,34 @@ export default function Home() {
               <p className="accommodation-desc">
                 Premium rooms are available directly at the wedding venue. Please contact the wedding coordinators to block your stay.
               </p>
-              <span className="accommodation-phone">Contact: +91 479 230 4001</span>
+              <span className="accommodation-phone">Contact: +91 479 234 4333</span>
             </div>
 
             <div className="accommodation-card reveal delay-200">
               <svg className="accommodation-icon" viewBox="0 0 24 24">
                 <path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z" />
               </svg>
-              <h3 className="accommodation-name">Regency Plaza</h3>
-              <span className="accommodation-distance">1.5 km from Venue</span>
+              <h3 className="accommodation-name">Hotel Vandanam International</h3>
+              <span className="accommodation-distance">500m from Venue</span>
               <p className="accommodation-desc">
-                Comfortable budget and semi-luxury rooms located close to Mavelikkara Railway Station. Ideal for short stays.
+                Comfortable premium and deluxe lodging options situated just a brief 5-minute walk from the wedding venue.
               </p>
-              <span className="accommodation-phone">Contact: +91 479 230 4220</span>
+              <span className="accommodation-phone">Contact: +91 479 234 3020</span>
             </div>
 
             <div className="accommodation-card reveal delay-400">
               <svg className="accommodation-icon" viewBox="0 0 24 24">
                 <path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z" />
               </svg>
-              <h3 className="accommodation-name">KTDC Tamarind</h3>
-              <span className="accommodation-distance">2.0 km from Venue</span>
+              <h3 className="accommodation-name">Panchavadi Tourist Home</h3>
+              <span className="accommodation-distance">300m from Venue</span>
               <p className="accommodation-desc">
-                Government-run heritage tourism rooms offering peaceful green surroundings, clean rooms, and traditional dining facilities.
+                Budget-friendly and cozy lodging option located just a short walk away from the wedding venue.
               </p>
-              <span className="accommodation-phone">Contact: +91 479 234 1856</span>
+              <span className="accommodation-phone">Contact: +91 91082 77257</span>
             </div>
+
+
           </div>
         </div>
       </section>
@@ -514,16 +402,16 @@ export default function Home() {
               <h3 className="family-title">Bride's Family</h3>
               <ul className="family-list">
                 <li className="family-member">
-                  <span className="member-name">Mr. Radhakrishnan</span>
+                  <span className="member-name">Mr. Saji</span>
                   <span className="member-relation">Father</span>
                 </li>
                 <li className="family-member">
-                  <span className="member-name">Mrs. Bindu Radhakrishnan</span>
+                  <span className="member-name">Mrs. Raji</span>
                   <span className="member-relation">Mother</span>
                 </li>
                 <li className="family-member">
-                  <span className="member-name">Sidharth Radhakrishnan</span>
-                  <span className="member-relation">Brother</span>
+                  <span className="member-name">Silpa</span>
+                  <span className="member-relation">Sister</span>
                 </li>
               </ul>
             </div>
@@ -533,16 +421,12 @@ export default function Home() {
               <h3 className="family-title">Groom's Family</h3>
               <ul className="family-list">
                 <li className="family-member">
-                  <span className="member-name">Mr. Mohanan</span>
+                  <span className="member-name">Mr. Anil Kumar V V</span>
                   <span className="member-relation">Father</span>
                 </li>
                 <li className="family-member">
-                  <span className="member-name">Mrs. Geetha Mohanan</span>
+                  <span className="member-name">Mrs. Grijisha V</span>
                   <span className="member-relation">Mother</span>
-                </li>
-                <li className="family-member">
-                  <span className="member-name">Arjun Mohanan</span>
-                  <span className="member-relation">Brother</span>
                 </li>
               </ul>
             </div>
@@ -579,12 +463,11 @@ export default function Home() {
             <div className="decor-line reveal delay-300" />
           </div>
 
-          <div className="faq-wrapper">
+          <div className="faq-wrapper reveal">
             {FAQ_ITEMS.map((item, index) => (
               <div
                 key={index}
-                className={`faq-item reveal ${activeFaqIndex === index ? 'active' : ''}`}
-                style={{ animationDelay: `${index * 100}ms` }}
+                className={`faq-item ${activeFaqIndex === index ? 'active' : ''}`}
               >
                 <button className="faq-question" onClick={() => toggleFaq(index)}>
                   <span>{item.question}</span>
@@ -592,14 +475,7 @@ export default function Home() {
                     <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
                   </svg>
                 </button>
-                <div
-                  className="faq-answer"
-                  style={{
-                    maxHeight: activeFaqIndex === index ? '200px' : '0px',
-                    transition: 'max-height 0.4s ease-out',
-                    overflow: 'hidden'
-                  }}
-                >
+                <div className="faq-answer">
                   <p>{item.answer}</p>
                 </div>
               </div>

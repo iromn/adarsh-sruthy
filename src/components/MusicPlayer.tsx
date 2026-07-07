@@ -5,7 +5,7 @@ import React, { useRef, useState, useEffect } from 'react';
 export default function MusicPlayer() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [statusText, setStatusText] = useState('Play Flute Music');
+  const [statusText, setStatusText] = useState('Play Invitation Music');
   const fallbackUrl = 'https://assets.mixkit.co/music/preview/mixkit-zen-meditation-flute-338.mp3';
 
   useEffect(() => {
@@ -14,7 +14,7 @@ export default function MusicPlayer() {
 
     const handlePlayEvent = () => {
       setIsPlaying(true);
-      setStatusText('Playing Flute');
+      setStatusText('Playing Music');
     };
 
     const handlePauseEvent = () => {
@@ -23,7 +23,7 @@ export default function MusicPlayer() {
     };
 
     const handleError = () => {
-      console.warn('Local flute audio failed to load. Falling back to mixkit server...');
+      console.warn('Local invitation audio failed to load. Falling back to mixkit server...');
       audio.src = fallbackUrl;
       audio.load();
     };
@@ -112,7 +112,7 @@ export default function MusicPlayer() {
   return (
     <>
       <audio ref={audioRef} id="bg-music" loop preload="none">
-        <source src="/assets/music/flute_melody.mp3" type="audio/mpeg" />
+        <source src="/assets/music/invitation-audio.mpeg" type="audio/mpeg" />
       </audio>
 
       <div className={`audio-player-widget ${isPlaying ? 'audio-playing' : ''}`}>

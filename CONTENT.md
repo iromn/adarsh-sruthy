@@ -14,6 +14,10 @@ From 4pm
 
 Wedding 
 
+Wedding on 23rd Aug 2026
+
+12:05pm to 12:45pm
+
 Wedding at Hotel Travancore Regency 
 Mavelikkara, Kerala 690101
 

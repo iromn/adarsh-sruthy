@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 interface Photo {
   src: string;
@@ -17,82 +17,222 @@ const PHOTOS: Photo[] = [
 ];
 
 export default function Gallery() {
-  const [isOpen, setIsOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const autoplayTimerRef = useRef<NodeJS.Timeout | null>(null);
 
-  const openLightbox = (index: number) => {
-    setCurrentIndex(index);
-    setIsOpen(true);
-    document.body.style.overflow = 'hidden';
-  };
-
-  const closeLightbox = () => {
-    setIsOpen(false);
-    document.body.style.overflow = '';
-  };
-
-  const nextImage = (e?: React.MouseEvent) => {
-    e?.stopPropagation();
+  const nextImage = () => {
     setCurrentIndex(prev => (prev + 1) % PHOTOS.length);
   };
 
-  const prevImage = (e?: React.MouseEvent) => {
-    e?.stopPropagation();
+  const prevImage = () => {
     setCurrentIndex(prev => (prev - 1 + PHOTOS.length) % PHOTOS.length);
   };
 
-  useEffect(() => {
-    if (!isOpen) return;
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index);
+  };
 
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        closeLightbox();
-      } else if (e.key === 'ArrowRight') {
-        nextImage();
-      } else if (e.key === 'ArrowLeft') {
-        prevImage();
+  // Start autoplay timer
+  useEffect(() => {
+    if (!isHovered) {
+      autoplayTimerRef.current = setInterval(nextImage, 4000); // 4 seconds interval
+    }
+    return () => {
+      if (autoplayTimerRef.current) {
+        clearInterval(autoplayTimerRef.current);
       }
     };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen]);
+  }, [isHovered]);
 
   return (
-    <>
-      <div className="gallery-masonry">
-        {PHOTOS.map((photo, index) => (
-          <div 
-            key={index} 
-            className="gallery-item reveal" 
-            onClick={() => openLightbox(index)}
-            style={{ animationDelay: `${index * 100}ms` }}
-          >
-            <img src={photo.src} alt={photo.caption} loading="lazy" />
-          </div>
-        ))}
+    <div 
+      className="gallery-carousel-wrapper"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      style={{
+        position: 'relative',
+        width: '100%',
+        maxWidth: '500px',
+        margin: '40px auto 0',
+        aspectRatio: '4/5', // elegant portrait ratio
+        overflow: 'hidden',
+        border: '1px solid rgba(197, 168, 128, 0.35)',
+        boxShadow: '0 15px 35px rgba(46, 30, 23, 0.12)',
+        backgroundColor: 'var(--bg-beige)'
+      }}
+    >
+      {/* Slides Container */}
+      <div 
+        style={{
+          width: '100%',
+          height: '100%',
+          position: 'relative'
+        }}
+      >
+        {PHOTOS.map((photo, index) => {
+          const isActive = index === currentIndex;
+          return (
+            <div
+              key={index}
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                opacity: isActive ? 1 : 0,
+                transform: isActive ? 'scale(1)' : 'scale(1.03)',
+                transition: 'opacity 1.2s ease-in-out, transform 1.2s ease-in-out',
+                zIndex: isActive ? 2 : 1,
+                pointerEvents: isActive ? 'auto' : 'none'
+              }}
+            >
+              <img 
+                src={photo.src} 
+                alt={photo.caption} 
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover'
+                }} 
+              />
+              
+              {/* Elegant Text Overlay at bottom */}
+              <div
+                style={{
+                  position: 'absolute',
+                  bottom: 0,
+                  left: 0,
+                  width: '100%',
+                  background: 'linear-gradient(to top, rgba(46, 30, 23, 0.9) 0%, rgba(46, 30, 23, 0.4) 60%, transparent 100%)',
+                  padding: '40px 25px 25px',
+                  color: 'var(--bg-ivory)',
+                  textAlign: 'center',
+                  zIndex: 3
+                }}
+              >
+                <p 
+                  style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: '20px',
+                    fontStyle: 'italic',
+                    letterSpacing: '0.05em',
+                    textShadow: '0 2px 4px rgba(0,0,0,0.5)',
+                    opacity: isActive ? 1 : 0,
+                    transform: isActive ? 'translateY(0)' : 'translateY(10px)',
+                    transition: 'opacity 0.8s ease-out 0.4s, transform 0.8s ease-out 0.4s'
+                  }}
+                >
+                  {photo.caption}
+                </p>
+              </div>
+            </div>
+          );
+        })}
       </div>
 
-      {isOpen && (
-        <div 
-          className="lightbox active" 
-          role="dialog" 
-          aria-modal="true" 
-          onClick={closeLightbox}
-        >
-          <span className="lightbox-close" onClick={closeLightbox}>&times;</span>
-          <span className="lightbox-nav lightbox-prev" onClick={prevImage}>&#10094;</span>
-          <div className="lightbox-content" onClick={e => e.stopPropagation()}>
-            <img 
-              src={PHOTOS[currentIndex].src} 
-              alt={PHOTOS[currentIndex].caption} 
-              className="lightbox-img" 
-            />
-            <p className="lightbox-caption">{PHOTOS[currentIndex].caption}</p>
-          </div>
-          <span className="lightbox-nav lightbox-next" onClick={nextImage}>&#10095;</span>
-        </div>
-      )}
-    </>
+      {/* Navigation Arrows */}
+      <button 
+        onClick={prevImage}
+        aria-label="Previous Slide"
+        style={{
+          position: 'absolute',
+          top: '50%',
+          left: '20px',
+          transform: 'translateY(-50%)',
+          zIndex: 10,
+          background: 'rgba(253, 251, 247, 0.25)',
+          color: 'var(--bg-ivory)',
+          border: '1px solid rgba(253, 251, 247, 0.4)',
+          width: '45px',
+          height: '45px',
+          borderRadius: '50%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontSize: '20px',
+          cursor: 'pointer',
+          transition: 'all 0.3s ease',
+          backdropFilter: 'blur(3px)'
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.background = 'rgba(253, 251, 247, 0.9)';
+          e.currentTarget.style.color = 'var(--teak)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.background = 'rgba(253, 251, 247, 0.25)';
+          e.currentTarget.style.color = 'var(--bg-ivory)';
+        }}
+      >
+        &#10094;
+      </button>
+      <button 
+        onClick={nextImage}
+        aria-label="Next Slide"
+        style={{
+          position: 'absolute',
+          top: '50%',
+          right: '20px',
+          transform: 'translateY(-50%)',
+          zIndex: 10,
+          background: 'rgba(253, 251, 247, 0.25)',
+          color: 'var(--bg-ivory)',
+          border: '1px solid rgba(253, 251, 247, 0.4)',
+          width: '45px',
+          height: '45px',
+          borderRadius: '50%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontSize: '20px',
+          cursor: 'pointer',
+          transition: 'all 0.3s ease',
+          backdropFilter: 'blur(3px)'
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.background = 'rgba(253, 251, 247, 0.9)';
+          e.currentTarget.style.color = 'var(--teak)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.background = 'rgba(253, 251, 247, 0.25)';
+          e.currentTarget.style.color = 'var(--bg-ivory)';
+        }}
+      >
+        &#10095;
+      </button>
+
+      {/* Navigation Indicators (Dots) */}
+      <div 
+        style={{
+          position: 'absolute',
+          bottom: '15px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          display: 'flex',
+          gap: '8px',
+          zIndex: 10
+        }}
+      >
+        {PHOTOS.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goToSlide(index)}
+            aria-label={`Go to slide ${index + 1}`}
+            style={{
+              width: '8px',
+              height: '8px',
+              borderRadius: '50%',
+              backgroundColor: index === currentIndex ? 'var(--gold)' : 'rgba(253, 251, 247, 0.4)',
+              border: 'none',
+              padding: 0,
+              cursor: 'pointer',
+              transition: 'background-color 0.3s ease, transform 0.3s ease',
+              transform: index === currentIndex ? 'scale(1.2)' : 'scale(1)'
+            }}
+          />
+        ))}
+      </div>
+    </div>
   );
 }

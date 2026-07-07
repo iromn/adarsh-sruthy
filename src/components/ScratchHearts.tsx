@@ -5,10 +5,9 @@ import React, { useRef, useEffect, useState } from 'react';
 interface HeartProps {
   label: string;
   value: string;
-  showInstruction?: boolean;
 }
 
-function ScratchHeart({ label, value, showInstruction = false }: HeartProps) {
+function ScratchHeart({ label, value }: HeartProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [isScratching, setIsScratching] = useState(false);
   const [isFaded, setIsFaded] = useState(false);
@@ -42,19 +41,10 @@ function ScratchHeart({ label, value, showInstruction = false }: HeartProps) {
 
     // Text overlay inside the heart before scratch
     ctx.fillStyle = '#FDFBF7';
-    if (showInstruction) {
-      ctx.font = '8px Montserrat';
-      ctx.textAlign = 'center';
-      ctx.fillText('SCRATCH', w / 2, h * 0.45);
-      
-      ctx.font = 'italic 10px Cormorant Garamond';
-      ctx.fillText('to reveal', w / 2, h * 0.58);
-    } else {
-      ctx.font = 'italic 12px Cormorant Garamond';
-      ctx.textAlign = 'center';
-      ctx.fillText('S & A', w / 2, h * 0.52);
-    }
-  }, [showInstruction]);
+    ctx.font = 'italic 12px Cormorant Garamond';
+    ctx.textAlign = 'center';
+    ctx.fillText('S & A', w / 2, h * 0.52);
+  }, []);
 
   const handleStart = (e: React.MouseEvent | React.TouchEvent) => {
     setIsScratching(true);
@@ -199,7 +189,7 @@ export default function ScratchHearts() {
           marginBottom: '20px'
         }}
       >
-        <ScratchHeart label="Day" value="30" showInstruction={true} />
+        <ScratchHeart label="Day" value="23" />
         <ScratchHeart label="Month" value="08" />
         <ScratchHeart label="Year" value="2026" />
       </div>
