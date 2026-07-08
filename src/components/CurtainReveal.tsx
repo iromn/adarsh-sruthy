@@ -182,29 +182,6 @@ export default function CurtainReveal() {
               animation: flameFlicker 1.5s infinite ease-in-out;
               transform-origin: 50px 38px;
             }
-            @keyframes pulseGlow {
-              0% { opacity: 0.6; }
-              50% { opacity: 1; }
-              100% { opacity: 0.6; }
-            }
-            .preloader-title {
-              animation: pulseGlow 2.5s infinite ease-in-out;
-            }
-            @keyframes dotWave {
-              0%, 100% { opacity: 0.2; }
-              50% { opacity: 1; }
-            }
-            .loading-dots .dot {
-              animation: dotWave 1.4s infinite;
-              display: inline-block;
-              font-weight: bold;
-            }
-            .loading-dots .dot:nth-child(2) {
-              animation-delay: 0.2s;
-            }
-            .loading-dots .dot:nth-child(3) {
-              animation-delay: 0.4s;
-            }
           `}</style>
           <div
             className={`wedding-preloader ${imagesLoaded ? 'loaded' : ''}`}
@@ -274,42 +251,6 @@ export default function CurtainReveal() {
                 <ellipse cx="50" cy="55" rx="8" ry="2" />
                 <path d="M42,55 C42,59 58,59 58,55 Z" />
               </svg>
-
-              {/* Pulsating Monogram/Text */}
-              <h2 
-                className="preloader-title"
-                style={{
-                  fontFamily: 'var(--font-script)',
-                  fontSize: '36px',
-                  color: 'var(--teak)',
-                  margin: '10px 0 0 0',
-                  textAlign: 'center',
-                  letterSpacing: '1px'
-                }}
-              >
-                Adarsh & Sruthy
-              </h2>
-
-              <div 
-                style={{ 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  gap: '8px',
-                  fontFamily: 'var(--font-sans)',
-                  fontSize: '11px',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.2em',
-                  color: 'var(--gold-dark)',
-                  opacity: 0.8
-                }}
-              >
-                <span>Loading Invitation</span>
-                <span className="loading-dots">
-                  <span className="dot">.</span>
-                  <span className="dot">.</span>
-                  <span className="dot">.</span>
-                </span>
-              </div>
             </div>
           </div>
         </>
