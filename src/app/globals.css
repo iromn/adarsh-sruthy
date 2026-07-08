@@ -56,7 +56,7 @@ body {
   color: var(--teak);
   background-color: var(--bg-ivory);
   min-height: 100vh;
-  line-height: 1.4;
+  line-height: 1;
   font-size: 17px;
   overflow-x: hidden;
   position: relative;
@@ -803,7 +803,7 @@ img {
 .profile-bio {
   font-family: var(--font-sans);
   font-size: 17px;
-  line-height: 1.4;
+  line-height: 1;
   color: var(--teak);
   opacity: 0.85;
 }
@@ -947,7 +947,7 @@ img {
 .timeline-desc {
   font-family: var(--font-sans);
   font-size: 15px;
-  line-height: 1.4;
+  line-height: 1;
   color: var(--teak);
   opacity: 0.8;
 }
@@ -1028,7 +1028,7 @@ img {
   gap: 15px;
   font-family: var(--font-sans);
   font-size: 15px;
-  line-height: 1.4;
+  line-height: 1;
   margin-bottom: 35px;
   flex-grow: 1;
 }
@@ -1114,7 +1114,7 @@ img {
 
 .venue-address {
   font-size: 16px;
-  line-height: 1.4;
+  line-height: 1;
   color: var(--teak);
   opacity: 0.85;
   margin-bottom: 30px;
@@ -1265,7 +1265,7 @@ img {
 .dresscode-desc {
   font-family: var(--font-serif);
   font-size: 17px;
-  line-height: 1.4;
+  line-height: 1;
   color: var(--teak);
   opacity: 0.8;
   font-style: italic;
@@ -1336,7 +1336,7 @@ img {
 
 .accommodation-desc {
   font-size: 15px;
-  line-height: 1.4;
+  line-height: 1;
   color: var(--teak);
   opacity: 0.8;
   margin-bottom: 25px;
@@ -1810,7 +1810,7 @@ img {
 .faq-answer p {
   padding: 0 30px 25px;
   font-size: 15px;
-  line-height: 1.4;
+  line-height: 1;
   opacity: 0.8;
 }
 
