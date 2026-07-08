@@ -67,7 +67,7 @@ Wishes / Notes: ${notes || 'None'}
             </tr>
           </table>
           <div style="margin-top: 25px; text-align: center; font-size: 11px; color: #8E754C; border-top: 1px solid rgba(197, 168, 128, 0.2); padding-top: 15px;">
-            Sruthy & Adarsh • 2026
+            Adarsh & Sruthy • 2026
           </div>
         </div>
       `,

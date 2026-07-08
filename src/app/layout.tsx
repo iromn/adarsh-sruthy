@@ -8,8 +8,8 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Sruthy & Adarsh — Wedding Invitation',
-  description: 'You are cordially invited to celebrate the union of Sruthy and Adarsh. Discover the details of our traditional Kerala wedding and reception, view our gallery, and RSVP here.',
+  title: 'Adarsh & Sruthy — Wedding Invitation',
+  description: 'You are cordially invited to celebrate the union of Adarsh and Sruthy. Discover the details of our traditional Kerala wedding and reception, view our gallery, and RSVP here.',
 };
 
 export default function RootLayout({

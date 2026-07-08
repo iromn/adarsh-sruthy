@@ -108,9 +108,9 @@ export default function Home() {
           <p className="hero-subtitle">MANGALYAM TANTUNANENA</p>
 
           <h1 className="hero-names">
-            Sruthy
-            <span>and</span>
             Adarsh
+            <span>and</span>
+            Sruthy
           </h1>
 
           <div className="ornamental-divider">
@@ -169,34 +169,34 @@ export default function Home() {
         <div className="container">
           <div className="editorial-header text-center">
             <span className="section-tag reveal">The Couple</span>
-            <h2 className="section-title reveal delay-200">Sruthy & Adarsh</h2>
+            <h2 className="section-title reveal delay-200">Adarsh & Sruthy</h2>
             <div className="decor-line reveal delay-300" />
           </div>
 
           <div className="couple-grid">
             <div className="couple-ampersand">&</div>
 
-            {/* Bride Card */}
+            {/* Groom Card */}
             <div className="profile-card reveal delay-100">
               <div className="profile-img-wrap">
-                <img src="/assets/photos/photo3.jpg" alt="Sruthy — The Bride" />
-              </div>
-              <span className="profile-title">The Bride</span>
-              <h3 className="profile-name">Sruthy</h3>
-              <p className="profile-bio">
-                An elegant, gentle, and warm soul. Inspired by classical art and the quiet beauty of southern Kerala, Sruthy brings joy and harmony to everyone she encounters.
-              </p>
-            </div>
-
-            {/* Groom Card */}
-            <div className="profile-card reveal delay-300">
-              <div className="profile-img-wrap">
-                <img src="/assets/photos/photo4.jpg" alt="Adarsh — The Groom" />
+                <img src="/assets/photos/groom.jpeg" alt="Adarsh — The Groom" />
               </div>
               <span className="profile-title">The Groom</span>
               <h3 className="profile-name">Adarsh</h3>
               <p className="profile-bio">
                 A man of depth, kindness, and fine intellect. Grounded in traditional values but modern in outlook, Adarsh is a warm nature-loving companion ready to build a bright future.
+              </p>
+            </div>
+
+            {/* Bride Card */}
+            <div className="profile-card reveal delay-300">
+              <div className="profile-img-wrap">
+                <img src="/assets/photos/bride.jpeg" alt="Sruthy — The Bride" />
+              </div>
+              <span className="profile-title">The Bride</span>
+              <h3 className="profile-name">Sruthy</h3>
+              <p className="profile-bio">
+                An elegant, gentle, and warm soul. Inspired by classical art and the quiet beauty of southern Kerala, Sruthy brings joy and harmony to everyone she encounters.
               </p>
             </div>
           </div>
@@ -397,8 +397,23 @@ export default function Home() {
           </div>
 
           <div className="family-grid">
-            {/* Bride's Family */}
+            {/* Groom's Family */}
             <div className="family-column reveal">
+              <h3 className="family-title">Groom's Family</h3>
+              <ul className="family-list">
+                <li className="family-member">
+                  <span className="member-name">Mr. Anil Kumar V V</span>
+                  <span className="member-relation">Father</span>
+                </li>
+                <li className="family-member">
+                  <span className="member-name">Mrs. Grijisha V</span>
+                  <span className="member-relation">Mother</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Bride's Family */}
+            <div className="family-column reveal delay-200">
               <h3 className="family-title">Bride's Family</h3>
               <ul className="family-list">
                 <li className="family-member">
@@ -412,21 +427,6 @@ export default function Home() {
                 <li className="family-member">
                   <span className="member-name">Silpa</span>
                   <span className="member-relation">Sister</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Groom's Family */}
-            <div className="family-column reveal delay-200">
-              <h3 className="family-title">Groom's Family</h3>
-              <ul className="family-list">
-                <li className="family-member">
-                  <span className="member-name">Mr. Anil Kumar V V</span>
-                  <span className="member-relation">Father</span>
-                </li>
-                <li className="family-member">
-                  <span className="member-name">Mrs. Grijisha V</span>
-                  <span className="member-relation">Mother</span>
                 </li>
               </ul>
             </div>
@@ -502,7 +502,7 @@ export default function Home() {
             <p className="footer-sub">For being a beautiful part of our lives and story.</p>
 
             <span className="footer-copyright">
-              Sruthy & Adarsh • 2026
+              Adarsh & Sruthy • 2026
             </span>
           </div>
         </div>

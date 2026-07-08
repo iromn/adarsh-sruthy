@@ -56,7 +56,8 @@ body {
   color: var(--teak);
   background-color: var(--bg-ivory);
   min-height: 100vh;
-  line-height: 1.8;
+  line-height: 1.6;
+  font-size: 17px;
   overflow-x: hidden;
   position: relative;
   -webkit-font-smoothing: antialiased;
@@ -523,7 +524,7 @@ img {
 
 .hero-subtitle {
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.25em;
@@ -532,7 +533,7 @@ img {
 }
 
 .hero-names {
-  font-size: 72px;
+  font-size: 78px;
   line-height: 1.1;
   color: var(--teak);
   margin-bottom: 25px;
@@ -541,7 +542,7 @@ img {
 
 .hero-names span {
   display: block;
-  font-size: 24px;
+  font-size: 26px;
   font-style: italic;
   color: var(--gold);
   margin: 10px 0;
@@ -549,7 +550,7 @@ img {
 
 .hero-date {
   font-family: var(--font-serif);
-  font-size: 20px;
+  font-size: 22px;
   letter-spacing: 0.15em;
   color: var(--teak);
   text-transform: uppercase;
@@ -558,7 +559,7 @@ img {
 
 .hero-time {
   font-family: var(--font-sans);
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 0.15em;
   color: var(--gold-dark);
   margin-bottom: 10px;
@@ -566,7 +567,7 @@ img {
 
 .hero-location {
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--sage);
@@ -578,7 +579,7 @@ img {
   padding: 12px 36px;
   border: 1px solid var(--teak);
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--teak);
@@ -603,7 +604,7 @@ img {
   align-items: center;
   gap: 10px;
   opacity: 0.7;
-  font-size: 10px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.25em;
   color: var(--teak);
@@ -667,7 +668,7 @@ img {
 
 .section-tag {
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--gold-dark);
@@ -676,15 +677,15 @@ img {
 }
 
 .section-title {
-  font-size: 52px;
+  font-size: 56px;
   color: var(--teak);
   margin-bottom: 20px;
 }
 
 .editorial-para {
   font-family: var(--font-script);
-  font-size: 24px;
-  line-height: 1.6;
+  font-size: 26px;
+  line-height: 1.5;
   color: var(--sage);
 }
 
@@ -786,7 +787,7 @@ img {
 
 .profile-title {
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.25em;
   color: var(--gold-dark);
@@ -794,15 +795,15 @@ img {
 }
 
 .profile-name {
-  font-size: 36px;
+  font-size: 40px;
   color: var(--teak);
   margin-bottom: 20px;
 }
 
 .profile-bio {
   font-family: var(--font-sans);
-  font-size: 15px;
-  line-height: 1.8;
+  font-size: 17px;
+  line-height: 1.6;
   color: var(--teak);
   opacity: 0.85;
 }
@@ -907,7 +908,7 @@ img {
 
 .timeline-date {
   font-family: var(--font-serif);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 600;
   color: var(--gold-dark);
   margin-bottom: 10px;
@@ -915,7 +916,7 @@ img {
 
 .timeline-title {
   font-family: var(--font-serif);
-  font-size: 24px;
+  font-size: 26px;
   color: var(--teak);
   margin-bottom: 15px;
 }
@@ -945,8 +946,8 @@ img {
 
 .timeline-desc {
   font-family: var(--font-sans);
-  font-size: 13px;
-  line-height: 1.8;
+  font-size: 15px;
+  line-height: 1.6;
   color: var(--teak);
   opacity: 0.8;
 }
@@ -1016,7 +1017,7 @@ img {
 }
 
 .event-title {
-  font-size: 32px;
+  font-size: 35px;
   color: var(--teak);
   margin-bottom: 20px;
 }
@@ -1026,8 +1027,8 @@ img {
   flex-direction: column;
   gap: 15px;
   font-family: var(--font-sans);
-  font-size: 13px;
-  line-height: 1.8;
+  font-size: 15px;
+  line-height: 1.6;
   margin-bottom: 35px;
   flex-grow: 1;
 }
@@ -1106,14 +1107,14 @@ img {
 }
 
 .venue-card-title {
-  font-size: 32px;
+  font-size: 35px;
   color: var(--teak);
   margin-bottom: 20px;
 }
 
 .venue-address {
-  font-size: 14px;
-  line-height: 1.8;
+  font-size: 16px;
+  line-height: 1.6;
   color: var(--teak);
   opacity: 0.85;
   margin-bottom: 30px;
@@ -1215,14 +1216,14 @@ img {
 
 .dresscode-title {
   font-family: var(--font-serif);
-  font-size: 24px;
+  font-size: 26px;
   color: var(--gold-dark);
   margin-bottom: 15px;
   text-transform: capitalize;
 }
 
 .dresscode-attire {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1263,8 +1264,8 @@ img {
 
 .dresscode-desc {
   font-family: var(--font-serif);
-  font-size: 15px;
-  line-height: 1.8;
+  font-size: 17px;
+  line-height: 1.6;
   color: var(--teak);
   opacity: 0.8;
   font-style: italic;
@@ -1318,13 +1319,13 @@ img {
 }
 
 .accommodation-name {
-  font-size: 24px;
+  font-size: 26px;
   color: var(--teak);
   margin-bottom: 15px;
 }
 
 .accommodation-distance {
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.15em;
@@ -1334,15 +1335,15 @@ img {
 }
 
 .accommodation-desc {
-  font-size: 13px;
-  line-height: 1.8;
+  font-size: 15px;
+  line-height: 1.6;
   color: var(--teak);
   opacity: 0.8;
   margin-bottom: 25px;
 }
 
 .accommodation-phone {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
   color: var(--gold-dark);
 }
@@ -1570,7 +1571,7 @@ img {
 .rsvp-label {
   display: block;
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.15em;
@@ -1584,7 +1585,7 @@ img {
   border: 1px solid rgba(197, 168, 128, 0.3);
   background: var(--bg-ivory);
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 15px;
   color: var(--teak);
   border-radius: 2px;
   transition: var(--transition-medium);
@@ -1607,7 +1608,7 @@ img {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 13px;
+  font-size: 15px;
   cursor: pointer;
   user-select: none;
 }
@@ -1623,7 +1624,7 @@ img {
   color: var(--bg-ivory);
   border: 1px solid var(--teak);
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -1711,6 +1712,7 @@ img {
 }
 
 .family-title {
+  font-family: var(--font-sans);
   font-size: 24px;
   color: var(--gold-dark);
   border-bottom: 1px solid rgba(197, 168, 128, 0.25);
@@ -1733,8 +1735,8 @@ img {
 }
 
 .member-name {
-  font-family: var(--font-serif);
-  font-size: 18px;
+  font-family: var(--font-script);
+  font-size: 26px;
   font-weight: 500;
   color: var(--teak);
 }
@@ -1807,8 +1809,8 @@ img {
 
 .faq-answer p {
   padding: 0 30px 25px;
-  font-size: 13px;
-  line-height: 1.8;
+  font-size: 15px;
+  line-height: 1.6;
   opacity: 0.8;
 }
 
