@@ -25,6 +25,10 @@ const FAQ_ITEMS: FaqItem[] = [
   {
     question: 'What type of food will be served?',
     answer: 'A traditional, grand Kerala Sadhya (vegetarian feast served on banana leaves) will be served following the wedding ceremony. For the evening reception, a premium multi-cuisine buffet dinner (both vegetarian and non-vegetarian) will be available.'
+  },
+  {
+    question: 'Who should I contact if I have any queries?',
+    answer: 'For any queries, please contact Manoj at +91 9447866810.'
   }
 ];
 
@@ -448,6 +452,12 @@ export default function Home() {
 
           <div className="rsvp-wrapper reveal">
             <RsvpForm />
+          </div>
+
+          <div className="text-center reveal delay-500" style={{ marginTop: '40px' }}>
+            <p style={{ fontFamily: 'var(--font-sans)', fontSize: '15px', color: 'var(--gold-dark)', letterSpacing: '0.05em' }}>
+              For any queries: <strong style={{ color: 'var(--teak)' }}>Manoj</strong> — <a href="tel:+919447866810" style={{ textDecoration: 'underline' }}>+91 9447866810</a>
+            </p>
           </div>
         </div>
       </section>
